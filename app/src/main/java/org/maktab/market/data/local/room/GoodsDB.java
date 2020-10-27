@@ -5,10 +5,13 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
-import org.maktab.market.data.model.Goods;
+import org.maktab.market.data.local.room.model.convertors.RoomConverters;
+import org.maktab.market.data.local.room.schema.SchemaGoods;
 
-@Database(entities = {Goods.class}, version = SchemaGoods.VERSION, exportSchema = false)
+@Database(entities = {GoodsRoomModel.class}, version = SchemaGoods.VERSION, exportSchema = false)
+@TypeConverters(RoomConverters.class)
 public abstract class GoodsDB extends RoomDatabase {
     public abstract GoodsDao getDao();
 

@@ -2,7 +2,12 @@ package org.maktab.market.data.local.repository;
 
 import android.content.Context;
 
+import androidx.lifecycle.LiveData;
+
 import org.maktab.market.data.local.room.GoodsDB;
+import org.maktab.market.data.local.room.model.GoodsRoomModel;
+
+import java.util.List;
 
 public class GoodsRepository {
     private static GoodsRepository mInstance;
@@ -16,5 +21,9 @@ public class GoodsRepository {
 
     public GoodsRepository(Context context) {
         mDB = GoodsDB.newInstance(context);
+    }
+
+    private LiveData<List<GoodsRoomModel>> getAllGods() {
+        return mDB.getDao().getAllGoods();
     }
 }
