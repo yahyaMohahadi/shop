@@ -3,6 +3,8 @@ package org.maktab.market.data.retrofit.respone;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
+import org.maktab.market.data.retrofit.GoodsRespone;
+
 public class Response{
 
 	@SerializedName("upsell_ids")
@@ -18,7 +20,7 @@ public class Response{
 	private List<Object> groupedProducts;
 
 	@SerializedName("_links")
-	private Links links;
+	private GoodsRespone links;
 
 	@SerializedName("tax_status")
 	private String taxStatus;
@@ -219,7 +221,7 @@ public class Response{
 		return groupedProducts;
 	}
 
-	public Links getLinks(){
+	public GoodsRespone getLinks(){
 		return links;
 	}
 

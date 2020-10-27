@@ -1,9 +1,12 @@
-package org.maktab.market.data.retrofit.respone;
+package org.maktab.market.data.retrofit;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class Links{
+import org.maktab.market.data.retrofit.respone.CollectionItem;
+import org.maktab.market.data.retrofit.respone.SelfItem;
+
+public class GoodsRespone {
 
 	@SerializedName("self")
 	private List<SelfItem> self;

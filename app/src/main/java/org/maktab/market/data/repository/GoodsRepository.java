@@ -2,16 +2,18 @@ package org.maktab.market.data.repository;
 
 import android.content.Context;
 
-import androidx.lifecycle.LiveData;
+import androidx.annotation.NonNull;
 
-import org.maktab.market.data.room.GoodsDB;
-import org.maktab.market.data.room.model.GoodsRoomModel;
+import org.maktab.market.data.retrofit.ApiClient;
+import org.maktab.market.data.retrofit.ApiInterface;
+import org.maktab.market.data.retrofit.GoodsRespone;
 
+import java.io.IOException;
 import java.util.List;
 
 public class GoodsRepository {
     private static GoodsRepository mInstance;
-    private GoodsDB mDB;
+    private List<GoodsRespone> mGoodsRespones;
 
     public static GoodsRepository newInstance(Context context) {
         if (mInstance == null)
@@ -20,10 +22,30 @@ public class GoodsRepository {
     }
 
     public GoodsRepository(Context context) {
-        mDB = GoodsDB.newInstance(context);
+
     }
 
-    private LiveData<List<GoodsRoomModel>> getAllGods() {
-        return mDB.getDao().getAllGoods();
+    public void addNewGoods(@NonNull List<GoodsRespone> listResponse) {
+        if (mGoodsRespones != null)
+            mGoodsRespones.addAll(listResponse);
+        else mGoodsRespones = listResponse;
+    }
+
+    public void getListGoods() {
+        List<GoodsRespone> listResponse;
+        try {
+            listResponse = ApiClient.getClient().create(ApiInterface.class).doGetList().execute().body();
+            if (listResponse != null) {
+                addNewGoods(listResponse);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getListGoods(int page) {
+        //todo get page goods
+        getListGoods();
     }
 }
