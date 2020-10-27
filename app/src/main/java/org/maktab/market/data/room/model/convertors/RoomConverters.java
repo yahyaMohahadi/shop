@@ -1,4 +1,4 @@
-package org.maktab.market.data.local.room.model.convertors;
+package org.maktab.market.data.room.model.convertors;
 
 import androidx.room.TypeConverter;
 

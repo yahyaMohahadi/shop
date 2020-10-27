@@ -1,11 +1,11 @@
-package org.maktab.market.data.local.repository;
+package org.maktab.market.data.repository;
 
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
-import org.maktab.market.data.local.room.GoodsDB;
-import org.maktab.market.data.local.room.model.GoodsRoomModel;
+import org.maktab.market.data.room.GoodsDB;
+import org.maktab.market.data.room.model.GoodsRoomModel;
 
 import java.util.List;
 

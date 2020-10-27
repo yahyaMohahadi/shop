@@ -1,11 +1,11 @@
-package org.maktab.market.data.local.room.model;
+package org.maktab.market.data.room.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import org.maktab.market.data.local.room.schema.SchemaGoods;
+import org.maktab.market.data.room.schema.SchemaGoods;
 
 import java.io.Serializable;
 import java.util.Date;

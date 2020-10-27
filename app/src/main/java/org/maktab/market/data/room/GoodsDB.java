@@ -1,4 +1,4 @@
-package org.maktab.market.data.local.room;
+package org.maktab.market.data.room;
 
 import android.content.Context;
 
@@ -7,8 +7,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import org.maktab.market.data.local.room.model.convertors.RoomConverters;
-import org.maktab.market.data.local.room.schema.SchemaGoods;
+import org.maktab.market.data.room.model.GoodsRoomModel;
+import org.maktab.market.data.room.model.convertors.RoomConverters;
+import org.maktab.market.data.room.schema.SchemaGoods;
 
 @Database(entities = {GoodsRoomModel.class}, version = SchemaGoods.VERSION, exportSchema = false)
 @TypeConverters(RoomConverters.class)

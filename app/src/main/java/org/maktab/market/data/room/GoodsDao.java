@@ -1,10 +1,10 @@
-package org.maktab.market.data.local.room;
+package org.maktab.market.data.room;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import org.maktab.market.data.local.room.model.GoodsRoomModel;
+import org.maktab.market.data.room.model.GoodsRoomModel;
 
 import java.util.List;
 

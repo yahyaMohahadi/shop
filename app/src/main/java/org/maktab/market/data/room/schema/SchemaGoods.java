@@ -1,4 +1,4 @@
-package org.maktab.market.data.local.room.schema;
+package org.maktab.market.data.room.schema;
 
 public class SchemaGoods {
     public static final String DATABASE_NAME = "shope.db";
